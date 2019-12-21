@@ -6,19 +6,22 @@ import java.util.*;
 
 import org.testng.annotations.BeforeSuite;
 
+import com.test.ET.ETBuilder;
 import com.test.Hindu.HinduBuilder;
 import com.test.toi.ToiBuilder;
 import com.test.toi.ToiParam;
 
 public class TestUtils extends ToiParam {
 	NewspaperBillInterface toiBuilder = new ToiBuilder();
-	NewspaperBillInterface Hindubuilder = new HinduBuilder();
+	NewspaperBillInterface hinduBuilder = new HinduBuilder();
+	NewspaperBillInterface etBuilder = new ETBuilder();
 
 	@BeforeSuite
 	public void setup()
 	{
 		toiBuilder.setPrices(3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
-		Hindubuilder.setPrices(3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
+		hinduBuilder.setPrices(3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
+		etBuilder.setPrices(3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
 	}
 	private Date getFirstDateofMonth() throws ParseException {
 		Calendar calendar = Calendar.getInstance();
@@ -111,9 +114,14 @@ public class TestUtils extends ToiParam {
 				}
 				
 				if (list[i].equalsIgnoreCase("HINDU")) {
-					float hinduSum = (Hindubuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
+					float hinduSum = (hinduBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
 					subcriptionList.put(list[i], hinduSum);
 				}
+				if (list[i].equalsIgnoreCase("ET")) {
+					float etSum = (etBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
+					subcriptionList.put(list[i], etSum);
+				}
+
 
 			}
 	}}
