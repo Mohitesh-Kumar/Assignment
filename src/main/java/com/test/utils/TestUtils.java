@@ -54,9 +54,6 @@ return firstDateofMonth;
 	        Calendar endDate = Calendar.getInstance();
 	        endDate.setTime(Lastdate);
 
-	        int sundays = 0;
-	        int saturday = 0;
-
 	        while (!startDate.after(endDate)) {
 
 	            if (startDate.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY ){

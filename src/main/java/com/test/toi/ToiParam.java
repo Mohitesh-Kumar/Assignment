@@ -6,7 +6,7 @@ public class ToiParam {
 	float tuesdayPrice;
 	float wednesdayPrice;
 	float thursdayPrice;
-	float FridayPrice;
+	float fridayPrice;
 	float saturdayPrice;
 	float sundayPrice;
 	
@@ -35,10 +35,10 @@ public class ToiParam {
 		this.thursdayPrice = thursdayPrice;
 	}
 	public float getFridayPrice() {
-		return FridayPrice;
+		return fridayPrice;
 	}
 	public void setFridayPrice(float fridayPrice) {
-		FridayPrice = fridayPrice;
+		this.fridayPrice = fridayPrice;
 	}
 	public float getSaturdayPrice() {
 		return saturdayPrice;
@@ -56,7 +56,7 @@ public class ToiParam {
 	@Override
 	public String toString() {
 		return "ToiParam [mondayPrice=" + mondayPrice + ", tuesdayPrice=" + tuesdayPrice + ", wednesdayPrice="
-				+ wednesdayPrice + ", thursdayPrice=" + thursdayPrice + ", FridayPrice=" + FridayPrice
+				+ wednesdayPrice + ", thursdayPrice=" + thursdayPrice + ", FridayPrice=" + fridayPrice
 				+ ", saturdayPrice=" + saturdayPrice + ", sundayPrice=" + sundayPrice + "]";
 	}
 
