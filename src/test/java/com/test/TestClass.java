@@ -14,7 +14,7 @@ public class TestClass extends TestUtils {
 		//Total Price of all subcription
 		float subscriptionPrice=0;
 		HashMap<String,Float> subcriptionList=new HashMap<String,Float>();
-		subcriptionList.putAll(getSubscriptionPrice("TOI,HINDU,ET"));
+		subcriptionList.putAll(getSubscriptionPrice("TOI,HINDU,ET,BM"));
 		for (Map.Entry<String,Float> entry : subcriptionList.entrySet())  
 		{
             System.out.println("Monthy subcrption price for :" + entry.getKey() + " is " + entry.getValue()); 
