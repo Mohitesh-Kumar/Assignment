@@ -1,6 +1,6 @@
-package com.test.Hindu;
+package com.test.ht;
 
-public class HinduParam {
+public class HTParam {
 
 	float mondayPrice;
 	float tuesdayPrice;

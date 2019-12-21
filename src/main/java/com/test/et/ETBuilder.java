@@ -1,11 +1,11 @@
-package com.test.BM;
+package com.test.et;
 
 import java.util.*;
 import java.util.Map.Entry;
 
 import com.test.utils.NewspaperBillInterface;
 
-public class BMBuilder extends BMParam implements NewspaperBillInterface{
+public class ETBuilder extends ETParam implements NewspaperBillInterface{
 
 	public void setPrices(float mondayPrice, float tuesdayPrice, float wednesdayPrice, float thursdayPrice,
 			float fridayPrice, float saturdayPrice, float sundayPrice) {
@@ -23,7 +23,7 @@ public class BMBuilder extends BMParam implements NewspaperBillInterface{
 		HashMap<String, Integer> daycount = new HashMap<String, Integer>();
 		daycount.putAll(dayCountHashMap);
 		float sum = 0;
-		System.out.println("Subscription plan for BM \n");
+		//System.out.println("Subscription plan for ET \n");
 		System.out.println("Day       | "+"count |"+" Price |"+" Total ");
 		// using for-each loop for iteration over Map.entrySet()
 		for (Entry<String, Integer> entry : daycount.entrySet()) {
@@ -32,7 +32,7 @@ public class BMBuilder extends BMParam implements NewspaperBillInterface{
 				//sum = sum + (entry.getValue() * getSundayPrice());
 				float dayCount= entry.getValue();float Price=getSundayPrice();float Total= dayCount*Price;
 				sum=sum+Total;
-				System.out.println(entry.getKey()+"    |"+dayCount+"    |"+Price+"    |  "+Total);
+				System.out.println(entry.getKey()+"    |"+dayCount+"    |"+Price+"   |  "+Total);
 			}
 			if (entry.getKey().equalsIgnoreCase("MONDAY")) {
 				//sum = sum + (entry.getValue() * getMondayPrice());
@@ -73,7 +73,7 @@ public class BMBuilder extends BMParam implements NewspaperBillInterface{
 
 		}
 		System.out.println("_________________________________");
-		System.out.println("Subscription price for BM | "+ sum);
+		System.out.println("Subscription price for ET | "+ sum);
 		System.out.println("_________________________________");
 		return sum;
 	}

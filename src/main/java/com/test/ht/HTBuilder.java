@@ -1,11 +1,11 @@
-package com.test.Hindu;
+package com.test.ht;
 
 import java.util.*;
 import java.util.Map.Entry;
 
 import com.test.utils.NewspaperBillInterface;
 
-public class HinduBuilder extends HinduParam implements NewspaperBillInterface{
+public class HTBuilder extends HTParam implements NewspaperBillInterface{
 
 	public void setPrices(float mondayPrice, float tuesdayPrice, float wednesdayPrice, float thursdayPrice,
 			float fridayPrice, float saturdayPrice, float sundayPrice) {
@@ -23,7 +23,7 @@ public class HinduBuilder extends HinduParam implements NewspaperBillInterface{
 		HashMap<String, Integer> daycount = new HashMap<String, Integer>();
 		daycount.putAll(dayCountHashMap);
 		float sum = 0;
-		System.out.println("Subscription plan for Hindu \n");
+		//System.out.println("Subscription plan for HT \n");
 		System.out.println("Day       | "+"count |"+" Price |"+" Total ");
 		// using for-each loop for iteration over Map.entrySet()
 		for (Entry<String, Integer> entry : daycount.entrySet()) {
@@ -73,7 +73,7 @@ public class HinduBuilder extends HinduParam implements NewspaperBillInterface{
 
 		}
 		System.out.println("_________________________________");
-		System.out.println("Subscription price for Hindu | "+ sum);
+		System.out.println("Subscription price for HT | "+ sum);
 		System.out.println("_________________________________");
 		return sum;
 	}
