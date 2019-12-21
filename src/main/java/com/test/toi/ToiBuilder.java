@@ -36,37 +36,37 @@ public class ToiBuilder extends ToiParam implements NewspaperBillInterface{
 			}
 			if (entry.getKey().equalsIgnoreCase("MONDAY")) {
 				//sum = sum + (entry.getValue() * getMondayPrice());
-				float dayCount= entry.getValue();float Price=getSundayPrice();float Total= dayCount*Price;
+				float dayCount= entry.getValue();float Price=getMondayPrice();float Total= dayCount*Price;
 				sum=sum+Total;
 				System.out.println(entry.getKey()+"    |"+dayCount+"    |"+Price+"    |  "+Total);
 			}
 			if (entry.getKey().equalsIgnoreCase("TUESDAY")) {
 				//sum = sum + (entry.getValue() * getTuesdayPrice());
-				float dayCount= entry.getValue();float Price=getSundayPrice();float Total= dayCount*Price;
+				float dayCount= entry.getValue();float Price=getTuesdayPrice();float Total= dayCount*Price;
 				sum=sum+Total;
 				System.out.println(entry.getKey()+"   |"+dayCount+"    |"+Price+"    |  "+Total);
 			}
 			if (entry.getKey().equalsIgnoreCase("WEDNESDAY")) {
 				//sum = sum + (entry.getValue() * getWednesdayPrice());
-				float dayCount= entry.getValue();float Price=getSundayPrice();float Total= dayCount*Price;
+				float dayCount= entry.getValue();float Price=getWednesdayPrice();float Total= dayCount*Price;
 				sum=sum+Total;
 				System.out.println(entry.getKey()+" |"+dayCount+"    |"+Price+"    |  "+Total);
 			}
 			if (entry.getKey().equalsIgnoreCase("THURSDAY")) {
 				//sum = sum + (entry.getValue() * getThursdayPrice());
-				float dayCount= entry.getValue();float Price=getSundayPrice();float Total= dayCount*Price;
+				float dayCount= entry.getValue();float Price=getThursdayPrice();float Total= dayCount*Price;
 				sum=sum+Total;
 				System.out.println(entry.getKey()+"  |"+dayCount+"    |"+Price+"    |  "+Total);
 			}
 			if (entry.getKey().equalsIgnoreCase("FRIDAY")) {
 				//sum = sum + (entry.getValue() * getFridayPrice());
-				float dayCount= entry.getValue();float Price=getSundayPrice();float Total= dayCount*Price;
+				float dayCount= entry.getValue();float Price=getFridayPrice();float Total= dayCount*Price;
 				sum=sum+Total;
 				System.out.println(entry.getKey()+"    |"+dayCount+"    |"+Price+"    |  "+Total);
 			}
 			if (entry.getKey().equalsIgnoreCase("SATURDAY")) {
 				//sum = sum + (entry.getValue() * getSaturdayPrice());
-				float dayCount= entry.getValue();float Price=getSundayPrice();float Total= dayCount*Price;
+				float dayCount= entry.getValue();float Price=getSaturdayPrice();float Total= dayCount*Price;
 				sum=sum+Total;
 				System.out.println(entry.getKey()+"  |"+dayCount+"    |"+Price+"    |  "+Total);
 			}
