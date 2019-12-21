@@ -23,7 +23,7 @@ public class ETBuilder extends ETParam implements NewspaperBillInterface{
 		HashMap<String, Integer> daycount = new HashMap<String, Integer>();
 		daycount.putAll(dayCountHashMap);
 		float sum = 0;
-		System.out.println("Subscription plan for Hindu \n");
+		System.out.println("Subscription plan for ET \n");
 		System.out.println("Day       | "+"count |"+" Price |"+" Total ");
 		// using for-each loop for iteration over Map.entrySet()
 		for (Entry<String, Integer> entry : daycount.entrySet()) {
@@ -73,7 +73,7 @@ public class ETBuilder extends ETParam implements NewspaperBillInterface{
 
 		}
 		System.out.println("_________________________________");
-		System.out.println("Subscription price for Hindu | "+ sum);
+		System.out.println("Subscription price for ET | "+ sum);
 		System.out.println("_________________________________");
 		return sum;
 	}
