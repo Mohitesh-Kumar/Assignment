@@ -10,13 +10,13 @@ public class TestClass extends TestUtils {
 	@BeforeSuite
 	public void setup()
 	{
-		toiReference.setPrices(1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f);
+		toiReference.setPrices(3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
 	}
 	@Test
 	public void Test()
 	{
-		System.out.println((toiReference.calculateMonthlyBill(weekdayCountforCurrentMonth())));
-		
+		float sum=(toiReference.calculateMonthlyBill(weekdayCountforCurrentMonth()));
+		System.out.println(sum);
 	}
 
 }

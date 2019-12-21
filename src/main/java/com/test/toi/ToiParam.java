@@ -53,11 +53,6 @@ public class ToiParam {
 		this.sundayPrice = sundayPrice;
 	}
 	
-	@Override
-	public String toString() {
-		return "ToiParam [mondayPrice=" + mondayPrice + ", tuesdayPrice=" + tuesdayPrice + ", wednesdayPrice="
-				+ wednesdayPrice + ", thursdayPrice=" + thursdayPrice + ", FridayPrice=" + fridayPrice
-				+ ", saturdayPrice=" + saturdayPrice + ", sundayPrice=" + sundayPrice + "]";
-	}
+
 
 }

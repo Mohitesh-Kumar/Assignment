@@ -1,6 +1,6 @@
 package com.test.toi;
 
-import java.util.HashMap;
+import java.util.*;
 import java.util.Map.Entry;
 
 import com.test.utils.NewspaperBillInterface;
@@ -23,32 +23,58 @@ public class ToiBuilder extends ToiParam implements NewspaperBillInterface{
 		HashMap<String, Integer> daycount = new HashMap<String, Integer>();
 		daycount.putAll(dayCountHashMap);
 		float sum = 0;
+		System.out.println("Subscription plan for TOI \n");
+		System.out.println("Day       | "+"count |"+" Price |"+" Total ");
 		// using for-each loop for iteration over Map.entrySet()
 		for (Entry<String, Integer> entry : daycount.entrySet()) {
 			//System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
 			if (entry.getKey().equalsIgnoreCase("SUNDAY")) {
-				sum = sum + (entry.getValue() * getMondayPrice());
+				//sum = sum + (entry.getValue() * getSundayPrice());
+				float dayCount= entry.getValue();float Price=getSundayPrice();float Total= dayCount*Price;
+				sum=sum+Total;
+				System.out.println(entry.getKey()+"    |"+dayCount+"    |"+Price+"    |  "+Total);
 			}
 			if (entry.getKey().equalsIgnoreCase("MONDAY")) {
-				sum = sum + (entry.getValue() * getSundayPrice());
+				//sum = sum + (entry.getValue() * getMondayPrice());
+				float dayCount= entry.getValue();float Price=getSundayPrice();float Total= dayCount*Price;
+				sum=sum+Total;
+				System.out.println(entry.getKey()+"    |"+dayCount+"    |"+Price+"    |  "+Total);
 			}
 			if (entry.getKey().equalsIgnoreCase("TUESDAY")) {
-				sum = sum + (entry.getValue() * getTuesdayPrice());
+				//sum = sum + (entry.getValue() * getTuesdayPrice());
+				float dayCount= entry.getValue();float Price=getSundayPrice();float Total= dayCount*Price;
+				sum=sum+Total;
+				System.out.println(entry.getKey()+"   |"+dayCount+"    |"+Price+"    |  "+Total);
 			}
 			if (entry.getKey().equalsIgnoreCase("WEDNESDAY")) {
-				sum = sum + (entry.getValue() * getWednesdayPrice());
+				//sum = sum + (entry.getValue() * getWednesdayPrice());
+				float dayCount= entry.getValue();float Price=getSundayPrice();float Total= dayCount*Price;
+				sum=sum+Total;
+				System.out.println(entry.getKey()+" |"+dayCount+"    |"+Price+"    |  "+Total);
 			}
 			if (entry.getKey().equalsIgnoreCase("THURSDAY")) {
-				sum = sum + (entry.getValue() * getThursdayPrice());
+				//sum = sum + (entry.getValue() * getThursdayPrice());
+				float dayCount= entry.getValue();float Price=getSundayPrice();float Total= dayCount*Price;
+				sum=sum+Total;
+				System.out.println(entry.getKey()+"  |"+dayCount+"    |"+Price+"    |  "+Total);
 			}
 			if (entry.getKey().equalsIgnoreCase("FRIDAY")) {
-				sum = sum + (entry.getValue() * getFridayPrice());
+				//sum = sum + (entry.getValue() * getFridayPrice());
+				float dayCount= entry.getValue();float Price=getSundayPrice();float Total= dayCount*Price;
+				sum=sum+Total;
+				System.out.println(entry.getKey()+"    |"+dayCount+"    |"+Price+"    |  "+Total);
 			}
 			if (entry.getKey().equalsIgnoreCase("SATURDAY")) {
-				sum = sum + (entry.getValue() * getSaturdayPrice());
+				//sum = sum + (entry.getValue() * getSaturdayPrice());
+				float dayCount= entry.getValue();float Price=getSundayPrice();float Total= dayCount*Price;
+				sum=sum+Total;
+				System.out.println(entry.getKey()+"  |"+dayCount+"    |"+Price+"    |  "+Total);
 			}
 
 		}
+		System.out.println("_________________________________");
+		System.out.println("Subscription price for TOI| "+ sum);
+		System.out.println("_________________________________");
 		return sum;
 	}
 
