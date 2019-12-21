@@ -1,6 +1,6 @@
-package com.test.BM;
+package com.test.et;
 
-public class BMParam {
+public class ETParam {
 
 	float mondayPrice;
 	float tuesdayPrice;

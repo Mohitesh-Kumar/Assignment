@@ -6,26 +6,31 @@ import java.util.*;
 
 import org.testng.annotations.BeforeSuite;
 
-import com.test.BM.BMBuilder;
-import com.test.ET.ETBuilder;
-import com.test.Hindu.HinduBuilder;
+import com.test.bm.BMBuilder;
+import com.test.et.ETBuilder;
+import com.test.hindu.HinduBuilder;
+import com.test.ht.HTBuilder;
 import com.test.toi.ToiBuilder;
 import com.test.toi.ToiParam;
 
-public class TestUtils extends ToiParam {
+public class TestUtils {
 	NewspaperBillInterface toiBuilder = new ToiBuilder();
 	NewspaperBillInterface hinduBuilder = new HinduBuilder();
-	NewspaperBillInterface etBuilder = new ETBuilder();
 	NewspaperBillInterface bmBuilder = new BMBuilder();
+	NewspaperBillInterface htBuilder = new HTBuilder();
+	NewspaperBillInterface etBuilder = new ETBuilder();
 
+//Setting day wise price for newspapers
 	@BeforeSuite
-	public void setup()
-	{
-		toiBuilder.setPrices(1.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
-		hinduBuilder.setPrices(2.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
-		etBuilder.setPrices(3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
-		bmBuilder.setPrices(4.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
+	public void setup() {
+		toiBuilder.setPrices(3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
+		hinduBuilder.setPrices(2.5f, 2.5f, 2.5f, 2.5f, 2.5f, 4.0f, 4.0f);
+		etBuilder.setPrices(2.0f, 2.0f, 2.0f, 2.0f, 2.0f, 2.0f, 10.0f);
+		bmBuilder.setPrices(1.5f, 1.5f, 1.5f, 1.5f, 1.5f, 1.5f, 1.5f);
+		htBuilder.setPrices(2.0f, 2.0f, 2.0f, 2.0f, 2.0f, 4.0f, 4.0f);
 	}
+
+	// Get first date of the month
 	private Date getFirstDateofMonth() throws ParseException {
 		Calendar calendar = Calendar.getInstance();
 		calendar.add(Calendar.MONTH, 0);
@@ -38,6 +43,7 @@ public class TestUtils extends ToiParam {
 
 	}
 
+	// Get Last date of the month
 	private Date getLastDateofMonth() throws ParseException {
 		Calendar calendar = Calendar.getInstance();
 		calendar.add(Calendar.MONTH, 0);
@@ -50,6 +56,7 @@ public class TestUtils extends ToiParam {
 
 	}
 
+	// Method to Calculate day count in a month
 	private HashMap<String, Integer> weekdayCountforCurrentMonth() {
 		HashMap<String, Integer> dayCountMap = new HashMap<String, Integer>();
 		try {
@@ -105,35 +112,46 @@ public class TestUtils extends ToiParam {
 		return dayCountMap;
 	}
 
+	// Method to get Subscription price for List of newspapers
 	public HashMap<String, Float> getSubscriptionPrice(String ListofNewsaper) {
 		HashMap<String, Float> subcriptionList = new HashMap<String, Float>();
-	try {	if (!ListofNewsaper.isEmpty()) {
-			
-			String[] list = ListofNewsaper.split(",");
-			for (int i = 0; i < list.length; i++) {
-				if (list[i].equalsIgnoreCase("TOI")) {
-					float TOISum = (toiBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
-					subcriptionList.put(list[i], TOISum);
-				}
-				
-				if (list[i].equalsIgnoreCase("HINDU")) {
-					float hinduSum = (hinduBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
-					subcriptionList.put(list[i], hinduSum);
-				}
-				if (list[i].equalsIgnoreCase("ET")) {
-					float etSum = (etBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
-					subcriptionList.put(list[i], etSum);
-				}
-				if (list[i].equalsIgnoreCase("BM")) {
-					float etSum = (bmBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
-					subcriptionList.put(list[i], etSum);
-				}
+		try {
+			if (!ListofNewsaper.isEmpty()) {
 
+				String[] list = ListofNewsaper.split(",");
+				for (int i = 0; i < list.length; i++) {
+					if (list[i].equalsIgnoreCase("TOI")) {
+						float toiSum = (toiBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
+						subcriptionList.put(list[i], toiSum);
+					}
 
+					if (list[i].equalsIgnoreCase("HINDU")) {
+						float hinduSum = (hinduBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
+						subcriptionList.put(list[i], hinduSum);
+					}
+
+					if (list[i].equalsIgnoreCase("BM")) {
+						float bmSum = (bmBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
+						subcriptionList.put(list[i], bmSum);
+					}
+					if (list[i].equalsIgnoreCase("HT")) {
+						float htSum = (htBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
+						subcriptionList.put(list[i], htSum);
+
+					}
+					try {
+						if (list[i].equalsIgnoreCase("ET")) {
+							float etSum = (etBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
+							subcriptionList.put(list[i], etSum);
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
 			}
-	}}
-	catch(Exception e) {e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return subcriptionList;
 	}
-		return subcriptionList;}
 }
-

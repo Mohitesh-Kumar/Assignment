@@ -23,7 +23,7 @@ public class ToiBuilder extends ToiParam implements NewspaperBillInterface{
 		HashMap<String, Integer> daycount = new HashMap<String, Integer>();
 		daycount.putAll(dayCountHashMap);
 		float sum = 0;
-		System.out.println("Subscription plan for TOI \n");
+		//System.out.println("Subscription plan for TOI \n");
 		System.out.println("Day       | "+"count |"+" Price |"+" Total ");
 		// using for-each loop for iteration over Map.entrySet()
 		for (Entry<String, Integer> entry : daycount.entrySet()) {

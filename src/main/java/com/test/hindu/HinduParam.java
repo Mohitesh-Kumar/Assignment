@@ -1,6 +1,6 @@
-package com.test.ET;
+package com.test.hindu;
 
-public class ETParam {
+public class HinduParam {
 
 	float mondayPrice;
 	float tuesdayPrice;
