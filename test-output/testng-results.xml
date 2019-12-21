@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="48" started-at="2019-12-21T17:44:22Z" finished-at="2019-12-21T17:44:22Z">
+  <suite name="TestVagrant_Assignment" duration-ms="44" started-at="2019-12-21T17:56:05Z" finished-at="2019-12-21T17:56:05Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="48" started-at="2019-12-21T17:44:22Z" finished-at="2019-12-21T17:44:22Z">
+    <test name="TestAssignment" duration-ms="44" started-at="2019-12-21T17:56:05Z" finished-at="2019-12-21T17:56:05Z">
       <class name="com.test.TestClass">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.test.TestClass@4f933fd1]" name="setup" is-config="true" duration-ms="12" started-at="2019-12-21T17:44:22Z" finished-at="2019-12-21T17:44:22Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.test.TestClass@4f933fd1]" name="setup" is-config="true" duration-ms="8" started-at="2019-12-21T17:56:05Z" finished-at="2019-12-21T17:56:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="Test()[pri:0, instance:com.test.TestClass@4f933fd1]" name="Test" duration-ms="28" started-at="2019-12-21T17:44:22Z" finished-at="2019-12-21T17:44:22Z">
+        <test-method status="PASS" signature="Test()[pri:0, instance:com.test.TestClass@4f933fd1]" name="Test" duration-ms="28" started-at="2019-12-21T17:56:05Z" finished-at="2019-12-21T17:56:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test -->
       </class> <!-- com.test.TestClass -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- TestAssignment -->
+  </suite> <!-- TestVagrant_Assignment -->
 </testng-results>
