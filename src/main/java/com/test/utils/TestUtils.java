@@ -6,6 +6,7 @@ import java.util.*;
 
 import org.testng.annotations.BeforeSuite;
 
+import com.test.BM.BMBuilder;
 import com.test.ET.ETBuilder;
 import com.test.Hindu.HinduBuilder;
 import com.test.toi.ToiBuilder;
@@ -15,13 +16,15 @@ public class TestUtils extends ToiParam {
 	NewspaperBillInterface toiBuilder = new ToiBuilder();
 	NewspaperBillInterface hinduBuilder = new HinduBuilder();
 	NewspaperBillInterface etBuilder = new ETBuilder();
+	NewspaperBillInterface bmBuilder = new BMBuilder();
 
 	@BeforeSuite
 	public void setup()
 	{
-		toiBuilder.setPrices(3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
-		hinduBuilder.setPrices(3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
+		toiBuilder.setPrices(1.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
+		hinduBuilder.setPrices(2.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
 		etBuilder.setPrices(3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
+		bmBuilder.setPrices(4.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
 	}
 	private Date getFirstDateofMonth() throws ParseException {
 		Calendar calendar = Calendar.getInstance();
@@ -119,6 +122,10 @@ public class TestUtils extends ToiParam {
 				}
 				if (list[i].equalsIgnoreCase("ET")) {
 					float etSum = (etBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
+					subcriptionList.put(list[i], etSum);
+				}
+				if (list[i].equalsIgnoreCase("BM")) {
+					float etSum = (bmBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
 					subcriptionList.put(list[i], etSum);
 				}
 
