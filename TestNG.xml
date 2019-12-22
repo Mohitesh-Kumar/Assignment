@@ -7,7 +7,7 @@
 
 	<test name="TestAssignment">
 		<classes>
-			<class name="com.test.TestClass"/>
+			<class name="com.tests.TestClass"/>
 		</classes>
 	</test>
 </suite>
