@@ -14,21 +14,7 @@ import com.test.toi.ToiBuilder;
 import com.test.toi.ToiParam;
 
 public class TestUtils {
-	NewspaperBillInterface toiBuilder = new ToiBuilder();
-	NewspaperBillInterface hinduBuilder = new HinduBuilder();
-	NewspaperBillInterface bmBuilder = new BMBuilder();
-	NewspaperBillInterface htBuilder = new HTBuilder();
-	NewspaperBillInterface etBuilder = new ETBuilder();
-
-//Setting day wise price for newspapers
-	@BeforeSuite
-	public void setup() {
-		toiBuilder.setPrices(3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
-		hinduBuilder.setPrices(2.5f, 2.5f, 2.5f, 2.5f, 2.5f, 4.0f, 4.0f);
-		etBuilder.setPrices(2.0f, 2.0f, 2.0f, 2.0f, 2.0f, 2.0f, 10.0f);
-		bmBuilder.setPrices(1.5f, 1.5f, 1.5f, 1.5f, 1.5f, 1.5f, 1.5f);
-		htBuilder.setPrices(2.0f, 2.0f, 2.0f, 2.0f, 2.0f, 4.0f, 4.0f);
-	}
+	NewspaperBillInterface builder;
 
 	// Get first date of the month
 	private Date getFirstDateofMonth() throws ParseException {
@@ -121,27 +107,37 @@ public class TestUtils {
 				String[] list = ListofNewsaper.split(",");
 				for (int i = 0; i < list.length; i++) {
 					if (list[i].equalsIgnoreCase("TOI")) {
-						float toiSum = (toiBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
+						builder=new ToiBuilder();
+						builder.setPrices(3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 5.0f, 6.0f);
+						float toiSum = (builder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
 						subcriptionList.put(list[i], toiSum);
 					}
 
 					if (list[i].equalsIgnoreCase("HINDU")) {
-						float hinduSum = (hinduBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
+						builder=new HinduBuilder();
+						builder.setPrices(2.5f, 2.5f, 2.5f, 2.5f, 2.5f, 4.0f, 4.0f);
+						float hinduSum = (builder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
 						subcriptionList.put(list[i], hinduSum);
 					}
 
 					if (list[i].equalsIgnoreCase("BM")) {
-						float bmSum = (bmBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
+						builder=new BMBuilder();
+						builder.setPrices(1.5f, 1.5f, 1.5f, 1.5f, 1.5f, 1.5f, 1.5f);
+						float bmSum = (builder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
 						subcriptionList.put(list[i], bmSum);
 					}
 					if (list[i].equalsIgnoreCase("HT")) {
-						float htSum = (htBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
+						builder= new HTBuilder();
+						builder.setPrices(2.0f, 2.0f, 2.0f, 2.0f, 2.0f, 4.0f, 4.0f);
+						float htSum = (builder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
 						subcriptionList.put(list[i], htSum);
 
 					}
 					try {
 						if (list[i].equalsIgnoreCase("ET")) {
-							float etSum = (etBuilder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
+							builder=new ETBuilder();
+							builder.setPrices(2.0f, 2.0f, 2.0f, 2.0f, 2.0f, 2.0f, 10.0f);
+							float etSum = (builder.calculateMonthlyBill(weekdayCountforCurrentMonth()));
 							subcriptionList.put(list[i], etSum);
 						}
 					} catch (Exception e) {
